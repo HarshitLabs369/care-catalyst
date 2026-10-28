@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Records | Care Catalyst</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+    <script src="js/patients.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html"><span class="brand-icon">+</span>Care Catalyst</a>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a class="active" href="patients.html">Patients</a>
+            <a href="symptoms.html">Symptom Helper</a>
+            <a href="dashboard.html">Monitoring</a>
+        </nav>
+    </header>
+
+    <main class="section-container" style="padding-top:45px;padding-bottom:65px">
+        <span class="eyebrow">PATIENT MANAGEMENT</span>
+        <h1>Patient Records</h1>
+        <p style="color:var(--muted)">Create and review fictional patient profiles for your demonstration.</p>
+
+        <section class="feature-card" style="margin:28px 0">
+            <h2>Add a patient</h2>
+            <form id="patientForm">
+                <div class="form-grid">
+                    <label>Patient name
+                        <input id="patientName" type="text" maxlength="80" required placeholder="e.g. Demo Patient">
+                    </label>
+                    <label>Age
+                        <input id="patientAge" type="number" min="0" max="120" required placeholder="e.g. 45">
+                    </label>
+                    <label class="full-width">Notes
+                        <textarea id="patientNotes" maxlength="500" rows="3" placeholder="Optional fictional notes"></textarea>
+                    </label>
+                </div>
+                <button class="button button-primary" type="submit">Save Patient</button>
+                <p id="patientMessage" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section>
+            <h2>Saved patients</h2>
+            <p id="patientCount" style="color:var(--muted)">Loading records...</p>
+            <div id="patientList" class="record-grid"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html"><span class="brand-icon">+</span>Care Catalyst</a>
+        <p>Demonstration data only. Do not enter real patient information.</p>
+    </footer>
+</body>
+</html>

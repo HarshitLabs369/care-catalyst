@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitoring | Care Catalyst</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+    <script src="js/monitoring.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html"><span class="brand-icon">+</span>Care Catalyst</a>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="patients.html">Patients</a>
+            <a href="symptoms.html">Symptom Helper</a>
+            <a class="active" href="dashboard.html">Monitoring</a>
+        </nav>
+    </header>
+
+    <main class="section-container" style="padding-top:45px;padding-bottom:65px">
+        <span class="eyebrow">HEALTH OVERVIEW</span>
+        <h1>Monitoring Dashboard</h1>
+        <p style="color:var(--muted)">
+            Explore fictional measurements and follow-up reminders for the prototype.
+        </p>
+
+        <div class="feature-grid" style="margin:28px 0">
+            <article class="feature-card">
+                <div class="feature-icon green">01</div>
+                <h3>Measurements</h3>
+                <p id="measurementCount">0 sample measurements recorded</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon blue">02</div>
+                <h3>Follow-ups</h3>
+                <p id="followupCount">0 reminders</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon purple">03</div>
+                <h3>Demo status</h3>
+                <p>Sample data only — not clinically validated.</p>
+            </article>
+        </div>
+
+        <section class="feature-card" style="margin-bottom:28px">
+            <h2>Add a sample measurement</h2>
+            <form id="measurementForm">
+                <div class="form-grid">
+                    <label>Patient
+                        <select id="measurementPatient" required>
+                            <option value="">Select a patient</option>
+                        </select>
+                    </label>
+                    <label>Measurement type
+                        <select id="measurementType" required>
+                            <option value="Heart rate">Heart rate (bpm)</option>
+                            <option value="Temperature">Temperature (°C)</option>
+                            <option value="Blood pressure">Blood pressure (mmHg)</option>
+                        </select>
+                    </label>
+                    <label>Value
+                        <input id="measurementValue" type="text" maxlength="30"
+                            required placeholder="e.g. 72 or 120/80">
+                    </label>
+                    <label>Date
+                        <input id="measurementDate" type="date" required>
+                    </label>
+                </div>
+                <button class="button button-primary" type="submit">Save Measurement</button>
+                <p id="measurementMessage" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section style="margin-bottom:35px">
+            <h2>Recent measurements</h2>
+            <div id="measurementList" class="record-grid"></div>
+        </section>
+
+        <section class="feature-card">
+            <h2>Follow-up reminders</h2>
+            <form id="followupForm">
+                <div class="form-grid">
+                    <label>Patient
+                        <select id="followupPatient" required>
+                            <option value="">Select a patient</option>
+                        </select>
+                    </label>
+                    <label>Reminder date
+                        <input id="followupDate" type="date" required>
+                    </label>
+                    <label class="full-width">Reminder
+                        <input id="followupText" type="text" maxlength="200"
+                            required placeholder="e.g. Demonstration follow-up appointment">
+                    </label>
+                </div>
+                <button class="button button-primary" type="submit">Add Reminder</button>
+                <p id="followupMessage" role="status" aria-live="polite"></p>
+            </form>
+
+            <h3 style="margin-top:28px">Saved reminders</h3>
+            <div id="followupList" class="record-grid"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html"><span class="brand-icon">+</span>Care Catalyst</a>
+        <p>Sample monitoring only. Not for medical decisions or emergency alerts.</p>
+    </footer>
+</body>
+</html>

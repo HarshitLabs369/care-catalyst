@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Helper | Care Catalyst</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+    <script src="js/symptoms.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html"><span class="brand-icon">+</span>Care Catalyst</a>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="patients.html">Patients</a>
+            <a class="active" href="symptoms.html">Symptom Helper</a>
+            <a href="dashboard.html">Monitoring</a>
+        </nav>
+    </header>
+
+    <main class="section-container" style="padding-top:45px;padding-bottom:65px">
+        <span class="eyebrow">HEALTH INFORMATION</span>
+        <h1>Symptom Helper</h1>
+        <p style="color:var(--muted)">
+            Explore general educational information about symptoms.
+            Results are not a diagnosis.
+        </p>
+
+        <section class="feature-card" style="margin:28px 0">
+            <form id="symptomForm">
+                <label for="symptomSearch">What symptom would you like to learn about?</label>
+                <div class="search-row">
+                    <input id="symptomSearch" type="search" maxlength="100"
+                        placeholder="Try headache, cough, or fever" required>
+                    <button class="button button-primary" type="submit">Search</button>
+                </div>
+                <p class="form-help">Try a symptom from the examples below.</p>
+                <div class="example-tags">
+                    <button type="button" class="tag-button" data-symptom="headache">Headache</button>
+                    <button type="button" class="tag-button" data-symptom="cough">Cough</button>
+                    <button type="button" class="tag-button" data-symptom="fever">Fever</button>
+                    <button type="button" class="tag-button" data-symptom="fatigue">Fatigue</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="symptomResults" aria-live="polite">
+            <div class="feature-card">
+                <h2>How to use this tool</h2>
+                <p>Enter a symptom or select an example to view general information.</p>
+            </div>
+        </section>
+
+        <aside class="safety-notice">
+            <strong>When to seek help</strong>
+            <p>
+                For severe or rapidly worsening symptoms, seek urgent medical care.
+                Difficulty breathing, severe chest pain, sudden weakness, or sudden
+                confusion may be emergencies. Do not delay care to use this tool.
+            </p>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html"><span class="brand-icon">+</span>Care Catalyst</a>
+        <p>Educational information only; not medical advice or diagnosis.</p>
+    </footer>
+</body>
+</html>
